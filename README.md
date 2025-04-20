@@ -8,16 +8,21 @@ on classrooms and course data.
 ------------------------------------------------------------
 HOW TO RUN
 ------------------------------------------------------------
+1. Clone the repo
+   ```sh
+   git clone https://github.com/anagraw/Microsoft_Hackathon.git
+   ```
 
-1. Compile the application
+2. Compile the application (for Windows/Ubuntu)
    Open a terminal in the project directory and run:
-
+   ```sh
    javac -cp ".;sqlite-jdbc-3.7.2.jar" LoginPage.java
+   ```
 
 2. Run the program
-
+   ```sh
    java -cp ".;sqlite-jdbc-3.7.2.jar" LoginPage
-
+   ```
    Note: You do NOT need to compile any other Java files.
 
 ------------------------------------------------------------
