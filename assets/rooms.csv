@@ -33,7 +33,8 @@ J105,lab,No,New Academic Block
 K125,lab,Yes,New Academic Block
 J106,lab,No,New Academic Block
 I124,lab,Yes,New Academic Block
-H106/I011,lab,No,New Academic Block
+H106,lab,No,New Academic Block
+I011,lab,No,New Academic Block
 J114,lab,Yes,New Academic Block
 I214,lab,No,New Academic Block
 W107,lab,Yes,Old Academic Block
