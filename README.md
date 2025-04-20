@@ -33,8 +33,8 @@ Use one of the following username/password combinations:
 
    Username : Password
    --------------------
-   surya    : 123
-   ananya   : 123
+   surya    : 123, 
+   ananya   : 123, 
    admin    : test
 
 ------------------------------------------------------------
