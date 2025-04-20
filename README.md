@@ -10,7 +10,7 @@ HOW TO RUN
 ------------------------------------------------------------
 1. Clone the repo
    ```sh
-   git clone https://github.com/anagraw/Microsoft_Hackathon.git
+   git clone https://github.com/anagraw/OOP_Project.git
    ```
 
 2. Compile the application (for Windows/Ubuntu)
