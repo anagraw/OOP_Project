@@ -71,35 +71,43 @@ public class InstructorScheduleViewer extends JFrame {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             boolean isFirst = true;
-
+    
             while ((line = br.readLine()) != null) {
                 if (isFirst) {
                     isFirst = false; // Skip header
                     continue;
                 }
-
+    
                 String[] fields = line.split(",", -1);
-
+    
                 if (fields.length < 11) continue;
-
+    
                 String instructor = fields[7].trim();
                 String courseTitle = fields[2].trim();
                 String room = fields[8].trim();
                 String days = fields[9].trim().replaceAll("\"", "");
                 String hours = fields[10].trim();
-
+    
                 String[] individualDays = days.split("\\s+");
+    
+                // Split each digit from the hours string and treat as a separate hour
                 for (String day : individualDays) {
-                    instructorScheduleMap
-                            .computeIfAbsent(instructor, k -> new ArrayList<>())
-                            .add(new String[]{courseTitle, room, day, hours});
+                    for (char hourChar : hours.toCharArray()) {
+                        if (Character.isDigit(hourChar)) {
+                            String singleHour = String.valueOf(hourChar);
+                            instructorScheduleMap
+                                    .computeIfAbsent(instructor, k -> new ArrayList<>())
+                                    .add(new String[]{courseTitle, room, day, singleHour});
+                        }
+                    }
                 }
             }
-
+    
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
 
 
 
