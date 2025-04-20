@@ -68,5 +68,6 @@ APPLICATION FLOW
 
    d) Export as PNG
       - Once generated, the timetable can be exported to a .PNG file.
+   e) You can view the video at https://www.loom.com/share/9a209aeb6a8f4d73adca6a2c87d3979f?sid=8a7676a5-79d9-44b6-893f-5b4a8fb40f58
 
 ------------------------------------------------------------
