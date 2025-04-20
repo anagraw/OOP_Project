@@ -22,7 +22,7 @@ public class InstructorScheduleViewer extends JFrame {
     public InstructorScheduleViewer(String filePath) {
         setTitle("Instructor Schedule Viewer");
         setSize(1000, 700);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        // setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         instructorScheduleMap = new HashMap<>();
@@ -160,9 +160,9 @@ public class InstructorScheduleViewer extends JFrame {
 }
 
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new InstructorScheduleViewer("course.csv").setVisible(true);
-        });
-    }
+    // public static void main(String[] args) {
+    //     SwingUtilities.invokeLater(() -> {
+    //         new InstructorScheduleViewer("course.csv").setVisible(true);
+    //     });
+    // }
 }
