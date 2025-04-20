@@ -16,6 +16,9 @@ HOW TO RUN
 2. Compile the application (for Windows/Ubuntu)
    Open a terminal in the project directory and run:
    ```sh
+   javac -d . (Get-ChildItem -Recurse -Filter *.java -Path SwingCalendar/src | ForEach-Object { $_.FullName })
+   ```
+   ```sh
    javac -cp ".;sqlite-jdbc-3.7.2.jar" LoginPage.java
    ```
 
