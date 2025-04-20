@@ -1,10 +1,8 @@
+import java.awt.*;
+import java.io.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.table.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.Vector;
 
 public class AddClassroomPage extends JFrame {
     private DefaultTableModel model;
@@ -125,7 +123,25 @@ public class AddClassroomPage extends JFrame {
         buttonPanel.add(nextButton);
 
         addClassroom.setPreferredSize(nextButton.getPreferredSize());
-
+        nextButton.addActionListener(e -> {
+            // Check if the table model has any rows
+            if (model.getRowCount() == 0) {
+                // If the table is empty, show an error message
+                JOptionPane.showMessageDialog(
+                    AddClassroomPage.this, // Parent component
+                    "The classroom list is empty.\nPlease add classrooms manually or upload a CSV file before proceeding.", // Message
+                    "Error: No Classrooms Added", // Title
+                    JOptionPane.ERROR_MESSAGE // Message type
+                );
+            } else {
+                // If the table is not empty, proceed to the next step
+                dispose(); // Close the current AddClassroomPage window
+                SwingUtilities.invokeLater(() -> {
+                    // Make sure AddCoursesUI is a valid class accessible here
+                    new AddCoursesUI().setVisible(true); // Open the next UI page
+                });
+            }
+        });
         addClassroom.addActionListener(e -> {
             JPanel inputPanel = new JPanel(new GridLayout(5, 2, 10, 10));
             JTextField roomField = new JTextField();
@@ -301,7 +317,7 @@ public class AddClassroomPage extends JFrame {
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new AddClassroomPage().setVisible(true));
-    }
+    // public static void main(String[] args) {
+    //     SwingUtilities.invokeLater(() -> new AddClassroomPage().setVisible(true));
+    // }
 }

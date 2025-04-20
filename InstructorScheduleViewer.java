@@ -159,10 +159,4 @@ public class InstructorScheduleViewer extends JFrame {
     }
 }
 
-
-    // public static void main(String[] args) {
-    //     SwingUtilities.invokeLater(() -> {
-    //         new InstructorScheduleViewer("course.csv").setVisible(true);
-    //     });
-    // }
 }

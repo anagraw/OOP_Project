@@ -89,6 +89,26 @@ public class AddCoursesUI extends JFrame {
         nextBtnPanel.setBackground(new Color(240, 250, 240));
         contentPanel.add(nextBtnPanel);
 
+        nextStep.addActionListener(l -> {
+            // Check if the course table model has any rows
+            if (tableModel.getRowCount() == 0) {
+                // If the table is empty, show an error message
+                JOptionPane.showMessageDialog(
+                    AddCoursesUI.this, // Parent component
+                    "The course list is empty.\nPlease add courses manually or upload a CSV file before proceeding.", // Message
+                    "Error: No Courses Added", // Title
+                    JOptionPane.ERROR_MESSAGE // Message type
+                );
+            } else {
+                // If the table is not empty, proceed to the next step
+                dispose(); // Close the current AddCoursesUI window
+                SwingUtilities.invokeLater(() -> {
+                    // Make sure TimetableGeneratorUI is a valid class accessible here
+                    new InstructorScheduleViewer("course.csv").setVisible(true);
+                });
+            }
+        });
+
         add(contentPanel, BorderLayout.CENTER);
     }
 
@@ -177,7 +197,7 @@ public class AddCoursesUI extends JFrame {
         dialog.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new AddCoursesUI().setVisible(true));
-    }
+    // public static void main(String[] args) {
+    //     SwingUtilities.invokeLater(() -> new AddCoursesUI().setVisible(true));
+    // }
 }

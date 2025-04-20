@@ -1,5 +1,5 @@
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class TimetableGeneratorUI extends JFrame {
 
@@ -31,6 +31,15 @@ public class TimetableGeneratorUI extends JFrame {
 
                 // Generate button
                 JButton generateButton = new JButton("Generate");
+
+                generateButton.addActionListener(e -> {
+                        dispose();
+                        SwingUtilities.invokeLater(() -> {
+                                new AddClassroomPage().setVisible(true);
+                        });
+
+
+                });
                 headerPanel.add(generateButton, BorderLayout.EAST);
 
                 // Main content panel
